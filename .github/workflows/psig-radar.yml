@@ -1,58 +1,62 @@
-name: PSIG Extreme Radar
+name: PSIG Extreme Radar — Live
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 13-20 * * 1-5"
+    - cron: "*/5 13-21 * * 1-5"
 
 concurrency:
-  group: psig-extreme-radar
+  group: psig-extreme-radar-live
   cancel-in-progress: false
 
 jobs:
-  psig:
+  live:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Phase 1 historical catalogue
-        run: |
-          python -m scanner.psig_phase1
-          python -m scanner.psig_event_study
       - name: Live PSIG scan
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python - <<'PY'
+          from zoneinfo import ZoneInfo
           from scanner.psig_radar import fetch_yahoo, compute_live_signal, format_telegram_signal, load_state, save_state, should_alert
           from scanner.telegram import send_telegram
+
           bars = fetch_yahoo("PSIG", "5m", 59)
-          if len(bars) >= 21:
-              signal = compute_live_signal(bars)
-              print(format_telegram_signal(signal))
-              state = load_state()
-              if should_alert(signal, state):
-                  send_telegram(format_telegram_signal(signal))
-                  save_state(state)
-          else:
+          if not bars:
+              print("PSIG: no intraday data")
+              raise SystemExit(0)
+
+          now_et = bars[-1].ts.astimezone(ZoneInfo("America/New_York"))
+          if now_et.weekday() >= 5 or not (9 <= now_et.hour <= 16) or (now_et.hour == 9 and now_et.minute < 30):
+              print(f"PSIG: outside regular market session ({now_et.isoformat()})")
+              raise SystemExit(0)
+
+          if len(bars) < 21:
               print("PSIG: insufficient intraday bars")
+              raise SystemExit(0)
+
+          signal = compute_live_signal(bars)
+          print(format_telegram_signal(signal))
+          state = load_state()
+          if should_alert(signal, state):
+              send_telegram(format_telegram_signal(signal))
+          save_state(state)
           PY
-      - name: Run PSIG unit tests
-        run: pytest -q
       - name: Commit PSIG state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/psig state/psig_alert_state.json
+          git add state/psig_alert_state.json
           git diff --cached --quiet && exit 0
-          git commit -m "Update PSIG Radar state [skip ci]"
+          git commit -m "Update PSIG live state [skip ci]"
           git push
