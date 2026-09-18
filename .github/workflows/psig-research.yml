@@ -5,18 +5,19 @@ on:
   schedule:
     - cron: "30 2 * * 1"
 
+permissions:
+  contents: write
+
 jobs:
   research:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install --disable-pip-version-check -r requirements.txt
       - name: Historical catalogue
         run: python -m scanner.psig_phase1
       - name: Event study
