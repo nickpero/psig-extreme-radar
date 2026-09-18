@@ -147,8 +147,16 @@ def save_state(state):
     STATE_PATH.write_text(json.dumps(state, indent=2, sort_keys=True), encoding="utf-8")
 
 def should_alert(signal, state):
-    if signal["status"] not in {"SETUP", "EXTREME"}: return False
-    key = signal["status"] + ":" + signal["timestamp"][:16]
-    if state.get("last_key") == key: return False
-    state["last_key"] = key
-    return True
+    """Alert on upward status transitions, not every 5-minute timestamp."""
+    status = signal["status"]
+    previous = state.get("status")
+    state["status"] = status
+    state["last_signal"] = {
+        "timestamp": signal["timestamp"],
+        "score": signal["score"],
+        "price": signal["price"],
+    }
+    if status not in {"SETUP", "EXTREME"}:
+        return False
+    rank = {"WATCH": 0, "SETUP": 1, "EXTREME": 2}
+    return previous is None or rank.get(status, 0) > rank.get(previous, 0)
