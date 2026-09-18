@@ -1,0 +1,474 @@
+{
+  "ticker": "PSIG",
+  "daily_bars": 290,
+  "episodes": [
+    {
+      "date": "2025-08-19",
+      "open": 3.200000047683716,
+      "high": 4.159999847412109,
+      "low": 2.7039999961853027,
+      "close": 3.111999988555908,
+      "previous_close": 3.1760001182556152,
+      "close_change_pct": -2.0151,
+      "intraday_range_pct": 53.8461,
+      "volume": 812250,
+      "rvol_20d": 0.0,
+      "criteria": [
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50",
+        "FAILED_SPIKE"
+      ],
+      "classification": "EXTREME_REVERSAL"
+    },
+    {
+      "date": "2025-08-26",
+      "open": 3.1679999828338623,
+      "high": 4.0,
+      "low": 3.0959999561309814,
+      "close": 3.9119999408721924,
+      "previous_close": 3.240000009536743,
+      "close_change_pct": 20.7407,
+      "intraday_range_pct": 29.199,
+      "volume": 69500,
+      "rvol_20d": 1.461,
+      "criteria": [
+        "DAILY_UP_20"
+      ],
+      "classification": "MAJOR_UPSIDE"
+    },
+    {
+      "date": "2025-09-04",
+      "open": 3.5999999046325684,
+      "high": 3.759999990463257,
+      "low": 2.880000114440918,
+      "close": 3.5999999046325684,
+      "previous_close": 3.5999999046325684,
+      "close_change_pct": 0.0,
+      "intraday_range_pct": 30.5556,
+      "volume": 68388,
+      "rvol_20d": 1.2321,
+      "criteria": [
+        "INTRADAY_RANGE_30"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2025-10-10",
+      "open": 3.4800000190734863,
+      "high": 4.0,
+      "low": 3.119999885559082,
+      "close": 3.6640000343322754,
+      "previous_close": 3.5199999809265137,
+      "close_change_pct": 4.0909,
+      "intraday_range_pct": 28.2051,
+      "volume": 27088,
+      "rvol_20d": 5.1638,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2025-10-13",
+      "open": 3.6600000858306885,
+      "high": 5.960000038146973,
+      "low": 3.6600000858306885,
+      "close": 4.75,
+      "previous_close": 3.6640000343322754,
+      "close_change_pct": 29.6397,
+      "intraday_range_pct": 62.8415,
+      "volume": 650800,
+      "rvol_20d": 100.4492,
+      "criteria": [
+        "DAILY_UP_20",
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50",
+        "VOLUME_5X",
+        "FAILED_SPIKE"
+      ],
+      "classification": "EXTREME_REVERSAL"
+    },
+    {
+      "date": "2025-11-21",
+      "open": 3.990000009536743,
+      "high": 4.25,
+      "low": 3.799999952316284,
+      "close": 4.199999809265137,
+      "previous_close": 3.75,
+      "close_change_pct": 12.0,
+      "intraday_range_pct": 11.8421,
+      "volume": 365200,
+      "rvol_20d": 52.6984,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2025-11-25",
+      "open": 4.090000152587891,
+      "high": 4.260000228881836,
+      "low": 4.079999923706055,
+      "close": 4.079999923706055,
+      "previous_close": 4.159999847412109,
+      "close_change_pct": -1.9231,
+      "intraday_range_pct": 4.4118,
+      "volume": 362300,
+      "rvol_20d": 14.1579,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2025-12-08",
+      "open": 4.739999771118164,
+      "high": 4.800000190734863,
+      "low": 4.0,
+      "close": 4.599999904632568,
+      "previous_close": 4.139999866485596,
+      "close_change_pct": 11.1111,
+      "intraday_range_pct": 20.0,
+      "volume": 433500,
+      "rvol_20d": 10.4521,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2025-12-09",
+      "open": 4.400000095367432,
+      "high": 4.5,
+      "low": 4.203999996185303,
+      "close": 4.320000171661377,
+      "previous_close": 4.599999904632568,
+      "close_change_pct": -6.087,
+      "intraday_range_pct": 7.0409,
+      "volume": 320700,
+      "rvol_20d": 5.1709,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2025-12-10",
+      "open": 4.21999979019165,
+      "high": 4.289999961853027,
+      "low": 4.050000190734863,
+      "close": 4.210000038146973,
+      "previous_close": 4.320000171661377,
+      "close_change_pct": -2.5463,
+      "intraday_range_pct": 5.9259,
+      "volume": 451200,
+      "rvol_20d": 5.7865,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-02-02",
+      "open": 4.809999942779541,
+      "high": 6.920000076293945,
+      "low": 4.409999847412109,
+      "close": 6.440000057220459,
+      "previous_close": 4.809999942779541,
+      "close_change_pct": 33.8877,
+      "intraday_range_pct": 56.9161,
+      "volume": 441000,
+      "rvol_20d": 16.9811,
+      "criteria": [
+        "DAILY_UP_20",
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50",
+        "VOLUME_5X"
+      ],
+      "classification": "VOLUME_MOMENTUM_SPIKE"
+    },
+    {
+      "date": "2026-02-13",
+      "open": 5.360000133514404,
+      "high": 5.78000020980835,
+      "low": 5.099999904632568,
+      "close": 5.590000152587891,
+      "previous_close": 5.010000228881836,
+      "close_change_pct": 11.5768,
+      "intraday_range_pct": 13.3333,
+      "volume": 305900,
+      "rvol_20d": 8.2121,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-02-25",
+      "open": 5.599999904632568,
+      "high": 5.900000095367432,
+      "low": 5.300000190734863,
+      "close": 5.789999961853027,
+      "previous_close": 5.570000171661377,
+      "close_change_pct": 3.9497,
+      "intraday_range_pct": 11.3208,
+      "volume": 404900,
+      "rvol_20d": 6.4331,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-03-26",
+      "open": 5.449999809265137,
+      "high": 5.909999847412109,
+      "low": 5.4019999504089355,
+      "close": 5.699999809265137,
+      "previous_close": 5.309999942779541,
+      "close_change_pct": 7.3446,
+      "intraday_range_pct": 9.4039,
+      "volume": 164900,
+      "rvol_20d": 5.3005,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-03-30",
+      "open": 5.949999809265137,
+      "high": 6.460000038146973,
+      "low": 5.639999866485596,
+      "close": 6.110000133514404,
+      "previous_close": 6.019999980926514,
+      "close_change_pct": 1.495,
+      "intraday_range_pct": 14.539,
+      "volume": 1213300,
+      "rvol_20d": 45.1797,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-03-31",
+      "open": 6.190000057220459,
+      "high": 6.419000148773193,
+      "low": 6.010000228881836,
+      "close": 6.119999885559082,
+      "previous_close": 6.110000133514404,
+      "close_change_pct": 0.1637,
+      "intraday_range_pct": 6.8053,
+      "volume": 894600,
+      "rvol_20d": 11.2777,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-04-07",
+      "open": 6.650000095367432,
+      "high": 6.820000171661377,
+      "low": 6.630000114440918,
+      "close": 6.739999771118164,
+      "previous_close": 6.519999980926514,
+      "close_change_pct": 3.3742,
+      "intraday_range_pct": 2.8658,
+      "volume": 2447300,
+      "rvol_20d": 17.9625,
+      "criteria": [
+        "VOLUME_5X"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-06-26",
+      "open": 11.75,
+      "high": 11.819999694824219,
+      "low": 1.059999942779541,
+      "close": 1.4500000476837158,
+      "previous_close": 11.800000190734863,
+      "close_change_pct": -87.7119,
+      "intraday_range_pct": 1015.0944,
+      "volume": 19321300,
+      "rvol_20d": 11.036,
+      "criteria": [
+        "DAILY_DOWN_20",
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50",
+        "VOLUME_5X"
+      ],
+      "classification": "VOLUME_MOMENTUM_SPIKE"
+    },
+    {
+      "date": "2026-06-29",
+      "open": 1.25,
+      "high": 1.600000023841858,
+      "low": 1.0299999713897705,
+      "close": 1.3700000047683716,
+      "previous_close": 1.4500000476837158,
+      "close_change_pct": -5.5172,
+      "intraday_range_pct": 55.3398,
+      "volume": 6767000,
+      "rvol_20d": 2.5081,
+      "criteria": [
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-08-18",
+      "open": 1.059999942779541,
+      "high": 1.7899999618530273,
+      "low": 1.059999942779541,
+      "close": 1.590000033378601,
+      "previous_close": 1.0800000429153442,
+      "close_change_pct": 47.2222,
+      "intraday_range_pct": 68.8679,
+      "volume": 5088600,
+      "rvol_20d": 86.5335,
+      "criteria": [
+        "DAILY_UP_20",
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50",
+        "VOLUME_5X"
+      ],
+      "classification": "VOLUME_MOMENTUM_SPIKE"
+    },
+    {
+      "date": "2026-08-19",
+      "open": 1.590000033378601,
+      "high": 2.359999895095825,
+      "low": 1.4500000476837158,
+      "close": 2.0399999618530273,
+      "previous_close": 1.590000033378601,
+      "close_change_pct": 28.3019,
+      "intraday_range_pct": 62.7586,
+      "volume": 1510100,
+      "rvol_20d": 4.8397,
+      "criteria": [
+        "DAILY_UP_20",
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50"
+      ],
+      "classification": "MAJOR_UPSIDE"
+    },
+    {
+      "date": "2026-08-20",
+      "open": 2.0,
+      "high": 2.3399999141693115,
+      "low": 1.7899999618530273,
+      "close": 2.2300000190734863,
+      "previous_close": 2.0399999618530273,
+      "close_change_pct": 9.3137,
+      "intraday_range_pct": 30.7263,
+      "volume": 343300,
+      "rvol_20d": 0.8969,
+      "criteria": [
+        "INTRADAY_RANGE_30"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-08-21",
+      "open": 2.1700000762939453,
+      "high": 2.9800000190734863,
+      "low": 2.1500000953674316,
+      "close": 2.7899999618530273,
+      "previous_close": 2.2300000190734863,
+      "close_change_pct": 25.1121,
+      "intraday_range_pct": 38.6046,
+      "volume": 986900,
+      "rvol_20d": 2.4845,
+      "criteria": [
+        "DAILY_UP_20",
+        "INTRADAY_RANGE_30"
+      ],
+      "classification": "MAJOR_UPSIDE"
+    },
+    {
+      "date": "2026-08-24",
+      "open": 2.9800000190734863,
+      "high": 3.0,
+      "low": 1.2300000190734863,
+      "close": 2.25,
+      "previous_close": 2.7899999618530273,
+      "close_change_pct": -19.3548,
+      "intraday_range_pct": 143.9024,
+      "volume": 786400,
+      "rvol_20d": 1.7658,
+      "criteria": [
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-09-10",
+      "open": 1.7300000190734863,
+      "high": 2.5,
+      "low": 1.7300000190734863,
+      "close": 2.2899999618530273,
+      "previous_close": 1.784999966621399,
+      "close_change_pct": 28.2913,
+      "intraday_range_pct": 44.5087,
+      "volume": 4094200,
+      "rvol_20d": 7.4466,
+      "criteria": [
+        "DAILY_UP_20",
+        "INTRADAY_RANGE_30",
+        "VOLUME_5X"
+      ],
+      "classification": "VOLUME_MOMENTUM_SPIKE"
+    },
+    {
+      "date": "2026-09-11",
+      "open": 2.299999952316284,
+      "high": 2.9700000286102295,
+      "low": 1.899999976158142,
+      "close": 2.674999952316284,
+      "previous_close": 2.2899999618530273,
+      "close_change_pct": 16.8122,
+      "intraday_range_pct": 56.3158,
+      "volume": 1789900,
+      "rvol_20d": 2.3782,
+      "criteria": [
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50"
+      ],
+      "classification": "EXTREME_INTRADAY"
+    },
+    {
+      "date": "2026-09-15",
+      "open": 2.5999999046325684,
+      "high": 3.7899999618530273,
+      "low": 2.5199999809265137,
+      "close": 3.4200000762939453,
+      "previous_close": 2.5399999618530273,
+      "close_change_pct": 34.6457,
+      "intraday_range_pct": 50.3968,
+      "volume": 4266300,
+      "rvol_20d": 4.6365,
+      "criteria": [
+        "DAILY_UP_20",
+        "INTRADAY_RANGE_30",
+        "EXTREME_INTRADAY_50"
+      ],
+      "classification": "MAJOR_UPSIDE"
+    }
+  ],
+  "intraday_bars_5m": 1453,
+  "intraday_error": null,
+  "methodology": {
+    "daily_upside_pct": 20,
+    "daily_downside_pct": -20,
+    "intraday_range_pct": 30,
+    "extreme_intraday_range_pct": 50,
+    "volume_rvol_20d": 5,
+    "failed_spike_high_from_open_pct": 20,
+    "failed_spike_close_from_high_pct": -15
+  }
+}
