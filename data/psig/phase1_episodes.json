@@ -1,6 +1,6 @@
 {
   "ticker": "PSIG",
-  "daily_bars": 290,
+  "daily_bars": 289,
   "episodes": [
     {
       "date": "2025-08-19",
@@ -460,7 +460,7 @@
       "classification": "MAJOR_UPSIDE"
     }
   ],
-  "intraday_bars_5m": 1453,
+  "intraday_bars_5m": 1410,
   "intraday_error": null,
   "methodology": {
     "daily_upside_pct": 20,

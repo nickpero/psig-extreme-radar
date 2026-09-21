@@ -8,37 +8,9 @@
     -1
   ],
   "event_count": 27,
-  "event_snapshot_count": 126,
-  "control_count": 218,
+  "event_snapshot_count": 125,
+  "control_count": 217,
   "rows": [
-    {
-      "date": "2025-08-22",
-      "close": 3.200000047683716,
-      "volume": 5438,
-      "return_1d": 7.8167,
-      "return_3d": 2.8278,
-      "return_5d": 5.2632,
-      "return_10d": 19.403,
-      "gap_pct": 5.1213,
-      "range_pct": 8.9239,
-      "body_pct": 2.5641,
-      "close_position": 0.5588,
-      "rvol20": 0.1145,
-      "rvol10": 0.0626,
-      "rvol5": 0.0321,
-      "volume_accel_5v20": 3.5659,
-      "high20_breakout": false,
-      "low20_breakdown": false,
-      "atr14_pct": 11.9286,
-      "drawdown_from_20d_high_pct": -23.0769,
-      "event_date": "2025-08-26",
-      "event_classification": "MAJOR_UPSIDE",
-      "event_offset": -2,
-      "is_event_snapshot": true,
-      "event_criteria": [
-        "DAILY_UP_20"
-      ]
-    },
     {
       "date": "2025-08-25",
       "close": 3.240000009536743,
@@ -3653,32 +3625,6 @@
         "INTRADAY_RANGE_30",
         "EXTREME_INTRADAY_50"
       ]
-    },
-    {
-      "date": "2025-08-22",
-      "close": 3.200000047683716,
-      "volume": 5438,
-      "return_1d": 7.8167,
-      "return_3d": 2.8278,
-      "return_5d": 5.2632,
-      "return_10d": 19.403,
-      "gap_pct": 5.1213,
-      "range_pct": 8.9239,
-      "body_pct": 2.5641,
-      "close_position": 0.5588,
-      "rvol20": 0.1145,
-      "rvol10": 0.0626,
-      "rvol5": 0.0321,
-      "volume_accel_5v20": 3.5659,
-      "high20_breakout": false,
-      "low20_breakdown": false,
-      "atr14_pct": 11.9286,
-      "drawdown_from_20d_high_pct": -23.0769,
-      "event_date": null,
-      "event_classification": null,
-      "event_offset": null,
-      "is_event_snapshot": false,
-      "event_criteria": []
     },
     {
       "date": "2025-08-28",
@@ -9299,7 +9245,7 @@
     {
       "date": "2026-09-18",
       "close": 4.150000095367432,
-      "volume": 1593252,
+      "volume": 1593300,
       "return_1d": -6.5315,
       "return_3d": 21.345,
       "return_5d": 55.1402,

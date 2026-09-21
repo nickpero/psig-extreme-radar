@@ -1,8 +1,8 @@
 {
   "ticker": "PSIG",
-  "daily_bars": 290,
+  "daily_bars": 289,
   "events": 27,
-  "controls": 218,
+  "controls": 217,
   "candidates": 5,
   "snapshot_offsets": [
     -10,
@@ -13,7 +13,7 @@
   ],
   "lead_time_snapshot_min": {
     "2025-08-19": null,
-    "2025-08-26": -2,
+    "2025-08-26": -1,
     "2025-09-04": -5,
     "2025-10-10": -10,
     "2025-10-13": -10,
