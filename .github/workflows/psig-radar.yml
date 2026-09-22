@@ -27,15 +27,20 @@ jobs:
         run: pip install --disable-pip-version-check -r requirements.txt
       - name: Live PSIG scan
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_BOT_TOKEN: \${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: \${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python - <<'PY'
           from zoneinfo import ZoneInfo
-          from scanner.psig_radar import fetch_yahoo, compute_live_signal, format_telegram_signal, load_state, save_state, should_alert
+          from scanner.psig_radar import (
+              fetch_yahoo, compute_live_signal, format_telegram_signal,
+              load_state, save_state, should_alert
+          )
+          from scanner.psig_catalyst import latest_catalyst
           from scanner.telegram import send_telegram
 
           bars = fetch_yahoo("PSIG", "5m", 59)
+          daily = fetch_yahoo("PSIG", "1d", 120)
           if not bars:
               print("PSIG: no intraday data")
               raise SystemExit(0)
@@ -44,16 +49,50 @@ jobs:
           if now_et.weekday() >= 5 or not (9 <= now_et.hour <= 16) or (now_et.hour == 9 and now_et.minute < 30):
               print(f"PSIG: outside regular market session ({now_et.isoformat()})")
               raise SystemExit(0)
-
           if len(bars) < 21:
               print("PSIG: insufficient intraday bars")
               raise SystemExit(0)
 
-          signal = compute_live_signal(bars)
+          filing = latest_catalyst(36)
+          catalyst_id = filing["accession"] if filing else None
+          signal = compute_live_signal(
+              bars,
+              catalyst=filing is not None,
+              catalyst_type=filing["type"] if filing else None,
+              catalyst_id=catalyst_id,
+              daily_bars=daily,
+          )
           print(format_telegram_signal(signal))
+
           state = load_state()
           if should_alert(signal, state):
-              send_telegram(format_telegram_signal(signal))
+              message = format_telegram_signal(signal)
+              if filing:
+                  message += (
+                      "\\n\\n📰 SEC CATALYST\\n"
+                      f"Form: {filing['form']}\\n"
+                      f"Type: {filing['type']}\\n"
+                      f"Filed: {filing['filing_date']}\\n"
+                      f"Accession: {filing['accession']}\\n"
+                      f"🔗 {filing['url']}"
+                  )
+              send_telegram(message)
+
+          # Independently surface genuinely structural SEC filings even if the
+          # market signal has not yet crossed SETUP. State prevents duplicates.
+          if filing and filing["type"] == "FINANCING":
+              if filing["accession"] != state.get("last_financing_accession"):
+                  send_telegram(
+                      "📰 PSIG RADAR — SEC FINANCING\\n"
+                      "━━━━━━━━━━━━━━━━━━\\n"
+                      f"Form: {filing['form']}\\n"
+                      f"Filed: {filing['filing_date']}\\n"
+                      f"Accession: {filing['accession']}\\n"
+                      f"🔗 {filing['url']}\\n\\n"
+                      "⚠️ Informational only — no automatic buy/sell signal."
+                  )
+                  state["last_financing_accession"] = filing["accession"]
+
           save_state(state)
           PY
       - name: Commit PSIG state
