@@ -1729,6 +1729,12 @@
           "volume": 1593300.0,
           "return_vs_prior_close": -6.5315,
           "return_vs_event_prev_close": 63.3858
+        },
+        "5": {
+          "close": 4.46999979019165,
+          "volume": 1863843.0,
+          "return_vs_prior_close": 2.5229,
+          "return_vs_event_prev_close": 75.9842
         }
       }
     }

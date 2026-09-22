@@ -1,0 +1,61 @@
+{
+  "status": "OK",
+  "folds": [
+    {
+      "fold": 1,
+      "status": "VALIDATED",
+      "train_events": 12,
+      "test_events": 6,
+      "chosen_threshold": {
+        "event_n": 12,
+        "control_n": 120,
+        "precision": 1.0,
+        "recall": 0.25,
+        "specificity": 1.0,
+        "false_positive_rate": 0.0,
+        "lift": null,
+        "feature": "rvol20",
+        "operator": ">=",
+        "threshold": 5,
+        "offset": -1
+      },
+      "test_metrics": {
+        "event_n": 6,
+        "control_n": 0,
+        "precision": 1.0,
+        "recall": 0.3333,
+        "specificity": 0.0,
+        "false_positive_rate": 1.0,
+        "lift": null
+      }
+    },
+    {
+      "fold": 2,
+      "status": "VALIDATED",
+      "train_events": 18,
+      "test_events": 7,
+      "chosen_threshold": {
+        "event_n": 18,
+        "control_n": 206,
+        "precision": 1.0,
+        "recall": 0.2778,
+        "specificity": 1.0,
+        "false_positive_rate": 0.0,
+        "lift": null,
+        "feature": "rvol20",
+        "operator": ">=",
+        "threshold": 5,
+        "offset": -1
+      },
+      "test_metrics": {
+        "event_n": 7,
+        "control_n": 0,
+        "precision": 1.0,
+        "recall": 0.2857,
+        "specificity": 0.0,
+        "false_positive_rate": 1.0,
+        "lift": null
+      }
+    }
+  ]
+}
