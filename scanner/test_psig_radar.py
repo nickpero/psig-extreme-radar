@@ -25,9 +25,21 @@ def test_spike_detection():
 
 
 def test_signal_status():
-    bars = [b(f"2026-09-{i:02d}", 2, 2.1, 1.9, 2, 1000) for i in range(1, 22)]
-    bars[-1] = b("2026-09-21", 2, 3, 1.9, 2.7, 8000)
-    signal = compute_live_signal(bars)
+    # compute_live_signal is an intraday engine, so use 5m bars at the same
+    # ET session slot across prior sessions rather than daily midnight bars.
+    prior = []
+    dates = []
+    d = datetime(2026, 8, 3, tzinfo=timezone.utc).date()
+    while len(dates) < 20:
+        if d.weekday() < 5:
+            dates.append(d)
+        d += timedelta(days=1)
+    for day in dates:
+        prior.append(Bar(datetime(day.year, day.month, day.day, 13, 30, tzinfo=timezone.utc),
+                         2, 2.1, 1.9, 2, 1000))
+    current = Bar(datetime(2026, 9, 1, 13, 30, tzinfo=timezone.utc),
+                  2, 3, 1.9, 2.7, 8000)
+    signal = compute_live_signal(prior + [current])
     assert signal["status"] in {"SETUP", "EXTREME"}
     assert signal["informational_only"] is True
 
