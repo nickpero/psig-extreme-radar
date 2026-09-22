@@ -143,11 +143,13 @@ def detect_daily_episodes(bars):
 
 
 def _daily_context_score(daily_bars: list[Bar] | None) -> tuple[float, float]:
-    if not daily_bars or len(daily_bars) < 21:
+    """Use the last completed daily session, never today's partial volume."""
+    if not daily_bars or len(daily_bars) < 22:
         return 0.0, 0.0
-    rvol = _rvol(daily_bars, 20)
-    recent_high = max(x.high for x in daily_bars[-21:-1])
-    breakout = 10.0 if daily_bars[-1].close >= recent_high else 0.0
+    completed = daily_bars[:-1]
+    rvol = _rvol(completed, 20)
+    recent_high = max(x.high for x in completed[-21:-1])
+    breakout = 10.0 if completed[-1].close >= recent_high else 0.0
     return rvol, breakout
 
 
