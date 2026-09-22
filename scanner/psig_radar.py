@@ -190,7 +190,7 @@ def format_telegram_signal(s):
     catalyst = s.get("catalyst_type") if s.get("catalyst") else "none identified"
     return "\n".join([
         f"{icon} PSIG RADAR — {s['status']}", "━━━━━━━━━━━━━━━━━━",
-        f"💰 Price: \${s['price']:.2f}", f"📈 Move: {s['move_pct']:+.2f}%",
+        f"💰 Price: ${s['price']:.2f}", f"📈 Move: {s['move_pct']:+.2f}%",
         f"📊 Intraday RVOL: {s['rvol_20']:.2f}×",
         f"📊 Daily RVOL: {s.get('daily_rvol_20', 0):.2f}×",
         f"⚡ Intraday range: {s['intraday_range_pct']:.2f}%",
