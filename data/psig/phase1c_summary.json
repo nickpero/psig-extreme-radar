@@ -1,8 +1,8 @@
 {
   "ticker": "PSIG",
-  "daily_bars": 290,
+  "daily_bars": 289,
   "events": 27,
-  "controls": 219,
+  "controls": 220,
   "candidates": 5,
   "snapshot_offsets": [
     -10,
